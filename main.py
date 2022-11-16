@@ -17,7 +17,7 @@ temp_df = temp_df.loc[temp_df['Symptoms'] > 4]
 df_daily = pd.read_csv("Daily_Country_Wise_Confirmed_Cases.csv")
 new_daily = df_daily.melt(id_vars=["Country"], var_name="Date", value_name="Value")
 app = dash.Dash(__name__)
-
+server=app.server
 app.layout = html.Div([
     html.H1("MONKEY-POX Dashboard", style={"textAlign": "center"}),  # Website Tittle
     html.Hr(),  # A separating line function
